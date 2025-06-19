@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AquaFlow Design System */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* AquaFlow Color System */
+    --deep-teal: #003135;
+    --ocean-blue: #024950;
+    --rust-orange: #964734;
+    --bright-teal: #0FA4AF;
+    --light-blue: #AFDDE5;
+    --pure-white: #FFFFFF;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-deep-teal {
+    color: var(--deep-teal);
+  }
+  
+  .text-ocean-blue {
+    color: var(--ocean-blue);
+  }
+  
+  .text-rust-orange {
+    color: var(--rust-orange);
+  }
+  
+  .text-bright-teal {
+    color: var(--bright-teal);
+  }
+  
+  .text-light-blue {
+    color: var(--light-blue);
+  }
+  
+  .bg-deep-teal {
+    background-color: var(--deep-teal);
+  }
+  
+  .bg-ocean-blue {
+    background-color: var(--ocean-blue);
+  }
+  
+  .bg-rust-orange {
+    background-color: var(--rust-orange);
+  }
+  
+  .bg-bright-teal {
+    background-color: var(--bright-teal);
+  }
+  
+  .bg-light-blue {
+    background-color: var(--light-blue);
+  }
+  
+  .border-bright-teal {
+    border-color: var(--bright-teal);
+  }
+  
+  .hover\:bg-rust-orange:hover {
+    background-color: var(--rust-orange);
+  }
+  
+  .hover\:border-bright-teal:hover {
+    border-color: var(--bright-teal);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, var(--deep-teal) 0%, var(--ocean-blue) 50%, var(--bright-teal) 100%);
+  }
+  
+  .gradient-cta {
+    background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--bright-teal) 100%);
+  }
+
+  /* Animation Delay Classes */
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+}
+
+/* Simple animations */
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fixed Typing Animation Keyframes */
+@keyframes typing {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  0%, 50% {
+    border-color: transparent;
+  }
+  51%, 100% {
+    border-color: currentColor;
+  }
+}
+
+@keyframes blink-caret-stop {
+  0%, 50% {
+    border-color: transparent;
+  }
+  51%, 99% {
+    border-color: currentColor;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+/* Mouse Trail Animation */
+@keyframes trail-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* Animation Classes */
+.animate-bounce-gentle {
+  animation: bounce-gentle 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Updated Typing Animation Classes */
+.animate-typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid currentColor;
+  width: 0;
+  animation:
+    typing 3s steps(12, end) forwards,
+    blink-caret-stop 0.7s step-end 5 3s;
+  animation-fill-mode: forwards;
+}
+
+.animate-typing-delayed {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid currentColor;
+  width: 0;
+  animation: 
+    typing 3s steps(18, end) 3.5s forwards, 
+    blink-caret-stop 1s step-end 3 6.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-typing-slow {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid currentColor;
+  width: 0;
+  animation: 
+    typing 3s steps(20, end) 7s forwards, 
+    blink-caret 1s step-end infinite 7s;
+  animation-fill-mode: forwards;
+}
+
+.animate-typing.end-caret {
+  animation: none;
+  border-right: none;
+}
+
+.mouse-trail {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--bright-teal);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: trail-fade 0.8s ease-out forwards;
+}
+
+/* Video placeholder styles */
+.video-placeholder {
+  background: linear-gradient(45deg, rgba(15, 164, 175, 0.1), rgba(175, 221, 229, 0.2));
+  border: 2px dashed var(--bright-teal);
+  transition: all 0.3s ease;
+}
+
+.video-placeholder:hover {
+  background: linear-gradient(45deg, rgba(15, 164, 175, 0.15), rgba(175, 221, 229, 0.25));
+  border-color: var(--light-blue);
+}
+
+/* Hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.underline-effect {
+  position: relative;
+}
+
+.underline-effect::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--bright-teal);
+  transition: width 0.3s ease;
+}
+
+.underline-effect:hover::after {
+  width: 100%;
+}
