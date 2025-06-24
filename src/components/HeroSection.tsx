@@ -83,25 +83,30 @@ const HeroSection = () => {
               </button>
             </div>
           </div>
-
-          {/* Video Placeholder */}
+          {/* Video Section - Embedded Video */}
           <div className="lg:text-right animate-fade-in-right animation-delay-400">
-            <div className="video-placeholder rounded-2xl p-12 flex flex-col items-center justify-center h-80 hover:scale-105 transition-transform duration-300">
-              <div className="text-7xl mb-6 animate-bounce-gentle">🎥</div>
-              <div className="text-bright-teal font-semibold text-xl mb-3">
-                Product Demo Video
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300">
+              {/* Video Element */}
+              <video
+                className="w-full h-80 object-cover"
+                poster="/aquaflow-video-thumbnail.jpg" // Add a compelling thumbnail image
+                controls
+                preload="metadata"
+              >
+                <source src="../../public/demo.mp4" type="video/mp4" />
+                <source src="../../public/demo.mp4" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+
+              {/* Optional: Custom Play Overlay */}
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-100 hover:opacity-0 transition-opacity duration-300 pointer-events-none">
+                <div className="bg-bright-teal/90 backdrop-blur-sm rounded-full p-4">
+                  <Play size={32} className="text-white ml-1" />
+                </div>
               </div>
-              <div className="text-light-blue text-base text-center mb-6">
-                Watch AquaFlow in action
-                <br />
-                <span className="text-sm opacity-75">
-                  (Video placeholder - ready for integration)
-                </span>
-              </div>
-              <button className="bg-bright-teal/20 hover:bg-bright-teal/30 text-bright-teal px-6 py-3 rounded-lg text-base transition-colors duration-300 flex items-center gap-2 font-medium">
-                <Play size={18} />
-                Play Demo
-              </button>
+
+              {/* Video Title Overlay */}
+
             </div>
           </div>
         </div>
