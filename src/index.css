@@ -40,9 +40,9 @@
     --deep-teal: #003135;
     --ocean-blue: #024950;
     --rust-orange: #964734;
-    --bright-teal: #0FA4AF;
-    --light-blue: #AFDDE5;
-    --pure-white: #FFFFFF;
+    --bright-teal: #0fa4af;
+    --light-blue: #afdde5;
+    --pure-white: #ffffff;
   }
 }
 
@@ -53,7 +53,8 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", sans-serif;
   }
 
   html {
@@ -65,76 +66,125 @@
   .text-deep-teal {
     color: var(--deep-teal);
   }
-  
+
   .text-ocean-blue {
     color: var(--ocean-blue);
   }
-  
+
   .text-rust-orange {
     color: var(--rust-orange);
   }
-  
+
   .text-bright-teal {
     color: var(--bright-teal);
   }
-  
+
   .text-light-blue {
     color: var(--light-blue);
   }
-  
+
   .bg-deep-teal {
     background-color: var(--deep-teal);
   }
-  
+
   .bg-ocean-blue {
     background-color: var(--ocean-blue);
   }
-  
+
   .bg-rust-orange {
     background-color: var(--rust-orange);
   }
-  
+
   .bg-bright-teal {
     background-color: var(--bright-teal);
   }
-  
+
   .bg-light-blue {
     background-color: var(--light-blue);
   }
-  
+
   .border-bright-teal {
     border-color: var(--bright-teal);
   }
-  
+
   .hover\:bg-rust-orange:hover {
     background-color: var(--rust-orange);
   }
-  
+
   .hover\:border-bright-teal:hover {
     border-color: var(--bright-teal);
   }
 
+  /* Add this to your existing index.css */
+
+  /* Enhanced gradient hero with background image support */
   .gradient-hero {
-    background: linear-gradient(135deg, var(--deep-teal) 0%, var(--ocean-blue) 50%, var(--bright-teal) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--deep-teal) 0%,
+      var(--ocean-blue) 50%,
+      var(--bright-teal) 100%
+    );
   }
-  
+
+  /* Alternative: If you want the background image to show through more */
+  .gradient-hero-light {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 49, 53, 0.8) 0%,
+      rgba(2, 73, 80, 0.7) 50%,
+      rgba(15, 164, 175, 0.6) 100%
+    );
+  }
+
+  /* For even more subtle background visibility */
+  .hero-background-blend {
+    background-blend-mode: multiply;
+    background-color: rgba(0, 49, 53, 0.7);
+  }
+
+  /* Optional: Animated background for water effect */
+  @keyframes gentle-wave {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(-5px) translateY(-2px);
+    }
+    50% {
+      transform: translateX(0) translateY(-5px);
+    }
+    75% {
+      transform: translateX(5px) translateY(-2px);
+    }
+  }
+
+  .animate-gentle-wave {
+    animation: gentle-wave 8s ease-in-out infinite;
+  }
+
   .gradient-cta {
-    background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--bright-teal) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--ocean-blue) 0%,
+      var(--bright-teal) 100%
+    );
   }
 
   /* Animation Delay Classes */
   .animation-delay-200 {
     animation-delay: 0.2s;
   }
-  
+
   .animation-delay-400 {
     animation-delay: 0.4s;
   }
-  
+
   .animation-delay-600 {
     animation-delay: 0.6s;
   }
-  
+
   .animation-delay-800 {
     animation-delay: 0.8s;
   }
@@ -142,7 +192,8 @@
 
 /* Simple animations */
 @keyframes bounce-gentle {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -188,19 +239,23 @@
 }
 
 @keyframes blink-caret {
-  0%, 50% {
+  0%,
+  50% {
     border-color: transparent;
   }
-  51%, 100% {
+  51%,
+  100% {
     border-color: currentColor;
   }
 }
 
 @keyframes blink-caret-stop {
-  0%, 50% {
+  0%,
+  50% {
     border-color: transparent;
   }
-  51%, 99% {
+  51%,
+  99% {
     border-color: currentColor;
   }
   100% {
@@ -242,8 +297,7 @@
   white-space: nowrap;
   border-right: 3px solid currentColor;
   width: 0;
-  animation:
-    typing 3s steps(12, end) forwards,
+  animation: typing 3s steps(12, end) forwards,
     blink-caret-stop 0.7s step-end 5 3s;
   animation-fill-mode: forwards;
 }
@@ -254,8 +308,7 @@
   white-space: nowrap;
   border-right: 3px solid currentColor;
   width: 0;
-  animation: 
-    typing 3s steps(18, end) 3.5s forwards, 
+  animation: typing 3s steps(18, end) 3.5s forwards,
     blink-caret-stop 1s step-end 3 6.5s;
   animation-fill-mode: forwards;
 }
@@ -266,8 +319,7 @@
   white-space: nowrap;
   border-right: 3px solid currentColor;
   width: 0;
-  animation: 
-    typing 3s steps(20, end) 7s forwards, 
+  animation: typing 3s steps(20, end) 7s forwards,
     blink-caret 1s step-end infinite 7s;
   animation-fill-mode: forwards;
 }
@@ -290,13 +342,21 @@
 
 /* Video placeholder styles */
 .video-placeholder {
-  background: linear-gradient(45deg, rgba(15, 164, 175, 0.1), rgba(175, 221, 229, 0.2));
+  background: linear-gradient(
+    45deg,
+    rgba(15, 164, 175, 0.1),
+    rgba(175, 221, 229, 0.2)
+  );
   border: 2px dashed var(--bright-teal);
   transition: all 0.3s ease;
 }
 
 .video-placeholder:hover {
-  background: linear-gradient(45deg, rgba(15, 164, 175, 0.15), rgba(175, 221, 229, 0.25));
+  background: linear-gradient(
+    45deg,
+    rgba(15, 164, 175, 0.15),
+    rgba(175, 221, 229, 0.25)
+  );
   border-color: var(--light-blue);
 }
 
@@ -307,7 +367,8 @@
 
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .underline-effect {
@@ -315,7 +376,7 @@
 }
 
 .underline-effect::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
